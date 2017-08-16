@@ -3,12 +3,22 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule } from '@angular/material';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
         SearchUsersComponent
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        MdInputModule,
+        MdButtonModule,
+        MdToolbarModule,
+        MdIconModule
       ],
     }).compileComponents();
   }));

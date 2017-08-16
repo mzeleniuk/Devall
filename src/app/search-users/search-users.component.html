@@ -1,8 +1,14 @@
-<div>
-  <input placeholder="Location name" #location>
-  <input placeholder="Language e.g. Ruby" #language>
+<div class="mat-typography">
+  <md-input-container>
+    <input mdInput placeholder="Location" #location>
+  </md-input-container>
 
-  <button (click)="search(location.value, language.value)">
+  <md-input-container>
+    <input mdInput placeholder="Language" #language>
+  </md-input-container>
+
+  <button md-raised-button color="primary" (click)="search(location.value, language.value)">
+    <md-icon>search</md-icon>
     Search
   </button>
 </div>
