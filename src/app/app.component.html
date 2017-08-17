@@ -1,11 +1,20 @@
 <md-toolbar color="primary">
   <span>{{title}}</span>
+
+  <span class="spacer"></span>
+  <img class="angular-logo" src="assets/angular.svg" alt="Angular"/>
 </md-toolbar>
 
-<div style="text-align: center">
-  <h1 class="mat-display-1">
-    Welcome to {{title}}!
-  </h1>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <h1 class="mat-display-1">
+        Welcome to {{title}}!
+      </h1>
+    </div>
 
-<app-search-users></app-search-users>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <app-search-users></app-search-users>
+    </div>
+  </div>
+</div>
