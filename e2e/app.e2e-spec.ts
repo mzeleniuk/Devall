@@ -7,8 +7,8 @@ describe('Devall App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display panel heading text', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to Devall!');
+    expect(page.getPanelHeadingText()).toEqual('Find developers in your city');
   });
 });

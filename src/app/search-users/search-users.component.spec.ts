@@ -1,9 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchUsersComponent } from './search-users.component';
+import { SearchUsersService } from '../search-users.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdInputModule, MdButtonModule } from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { MdInputModule, MdButtonModule, MdSnackBarModule } from '@angular/material';
+import { MdSnackBar } from '@angular/material';
 
 describe('SearchUsersComponent', () => {
   let component: SearchUsersComponent;
@@ -11,12 +14,15 @@ describe('SearchUsersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchUsersComponent ],
+      declarations: [SearchUsersComponent],
       imports: [
         BrowserAnimationsModule,
+        HttpModule,
         MdInputModule,
-        MdButtonModule
-      ]
+        MdButtonModule,
+        MdSnackBarModule
+      ],
+      providers: [SearchUsersService, MdSnackBar]
     })
     .compileComponents();
   }));

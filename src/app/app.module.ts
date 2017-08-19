@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule, MdSnackBarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
@@ -22,7 +22,8 @@ import 'hammerjs';
     MdInputModule,
     MdButtonModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdSnackBarModule
   ],
   providers: [SearchUsersService],
   bootstrap: [AppComponent]

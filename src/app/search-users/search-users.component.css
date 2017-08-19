@@ -1,1 +1,31 @@
 /*CSS styles for SearchUsers Component*/
+
+.md-panel {
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  margin: 20px 0;
+}
+
+.md-panel .md-panel-header {
+  padding: 18px 20px;
+  color: rgba(0, 0, 0, 0.54);
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+}
+
+.md-panel .md-panel-header .md-panel-header-text {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.md-panel .md-panel-body {
+  padding: 30px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.search-button {
+  top: 12px;
+}

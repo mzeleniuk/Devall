@@ -1,14 +1,52 @@
 <div class="mat-typography">
-  <md-input-container>
-    <input mdInput placeholder="Location" #location>
-  </md-input-container>
+  <div class="container">
+    <div class="md-panel">
+      <div class="md-panel-header">
+        <span class="md-panel-header-text mat-subheading-1">
+          Find developers in your city
+        </span>
 
-  <md-input-container>
-    <input mdInput placeholder="Language" #language>
-  </md-input-container>
+        <md-icon>input</md-icon>
+      </div>
 
-  <button md-raised-button color="primary" (click)="search(location.value, language.value)">
-    <md-icon>search</md-icon>
-    Search
-  </button>
+      <div class="md-panel-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <md-input-container class="full-width">
+              <input mdInput placeholder="Location" #location
+                     (keyup.enter)="search(location.value, language.value)">
+            </md-input-container>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <md-input-container class="full-width">
+              <input mdInput placeholder="Language" #language
+                     (keyup.enter)="search(location.value, language.value)">
+            </md-input-container>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+            <button md-raised-button color="primary" class="search-button"
+                    (click)="search(location.value, language.value)"
+                    disabled="{{!location.value && !language.value}}">
+              <md-icon>search</md-icon>
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let user of results" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div>
+        <img src="{{user.avatar_url}}" width="100" height="100">
+      </div>
+
+      <div>
+        <a href="{{user.html_url}}">{{user.login}}</a>
+      </div>
+    </div>
+  </div>
 </div>

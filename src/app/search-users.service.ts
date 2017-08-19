@@ -40,7 +40,7 @@ export class SearchUsersService {
   private extractData(response: Response) {
     const body = response.json();
 
-    return body.items || {};
+    return body || {};
   }
 
   private handleError(error: Response | any) {

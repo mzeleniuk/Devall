@@ -1,10 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
+import { SearchUsersService } from './search-users.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule, MdSnackBarModule } from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -15,11 +17,14 @@ describe('AppComponent', () => {
       ],
       imports: [
         BrowserAnimationsModule,
+        HttpModule,
         MdInputModule,
         MdButtonModule,
         MdToolbarModule,
-        MdIconModule
+        MdIconModule,
+        MdSnackBarModule
       ],
+      providers: [SearchUsersService]
     }).compileComponents();
   }));
 
@@ -35,10 +40,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Devall');
   }));
 
-  it('should render title in a h1 tag', async(() => {
+  it('should render text in span tag with md-panel-header-text class', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Devall!');
+    expect(compiled.querySelector('span.md-panel-header-text').textContent).toContain('Find developers in your city');
   }));
 });
