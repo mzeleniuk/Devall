@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import { SearchUsersService } from './search-users.service';
+import { FooterComponent } from './footer/footer.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule, MdSnackBarModule } from '@angular/material';
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        SearchUsersComponent
+        SearchUsersComponent,
+        FooterComponent
       ],
       imports: [
         BrowserAnimationsModule,

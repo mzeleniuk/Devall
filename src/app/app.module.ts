@@ -7,13 +7,15 @@ import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule, MdSnackBa
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import { SearchUsersService } from './search-users.service';
+import { FooterComponent } from './footer/footer.component';
 
 import 'hammerjs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchUsersComponent
+    SearchUsersComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

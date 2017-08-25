@@ -1,0 +1,17 @@
+.footer-bar {
+  padding: 12px;
+}
+
+.footer-bar .row {
+  width: 100%;
+  text-align: right;
+}
+
+.footer-bar .row a {
+  color: hsla(0, 0%, 100%, 0.87);
+}
+
+.angular-logo {
+  max-height: 50px;
+  max-width: 50px;
+}
