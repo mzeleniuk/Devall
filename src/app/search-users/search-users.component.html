@@ -40,13 +40,21 @@
 
   <div class="row">
     <div *ngFor="let user of results" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-      <div>
-        <img src="{{user.avatar_url}}" width="100" height="100">
-      </div>
+      <md-card class="user-card">
+        <md-card-header>
+          <md-card-title>
+            <span class="mat-headline">{{user.login}}</span>
+          </md-card-title>
+        </md-card-header>
 
-      <div>
-        <a href="{{user.html_url}}">{{user.login}}</a>
-      </div>
+        <img md-card-image src="{{user.avatar_url}}">
+
+        <md-card-actions class="user-card-actions">
+          <a md-mini-fab color="accent" href="{{user.html_url}}" target="_blank" title="View on GitHub">
+            <md-icon>open_in_new</md-icon>
+          </a>
+        </md-card-actions>
+      </md-card>
     </div>
   </div>
 </div>

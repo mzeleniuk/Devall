@@ -7,7 +7,14 @@ import { SearchUsersService } from './search-users.service';
 import { FooterComponent } from './footer/footer.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdInputModule, MdButtonModule, MdToolbarModule, MdIconModule, MdSnackBarModule } from '@angular/material';
+import {
+  MdInputModule,
+  MdButtonModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdSnackBarModule,
+  MdCardModule
+} from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -24,7 +31,8 @@ describe('AppComponent', () => {
         MdButtonModule,
         MdToolbarModule,
         MdIconModule,
-        MdSnackBarModule
+        MdSnackBarModule,
+        MdCardModule
       ],
       providers: [SearchUsersService]
     }).compileComponents();
