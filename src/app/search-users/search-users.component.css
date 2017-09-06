@@ -37,3 +37,8 @@
 .user-card .user-card-actions {
   margin: 0;
 }
+
+.user-card .user-card-actions .view-profile-button {
+  height: 40px;
+  float: right;
+}

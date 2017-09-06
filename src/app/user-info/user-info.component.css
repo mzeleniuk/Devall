@@ -1,0 +1,23 @@
+.spinner {
+  margin: 0 auto;
+}
+
+.user-info-dialog {
+  width: 40vw;
+}
+
+.user-info-dialog img {
+  margin: 0 auto;
+  max-width: 250px;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .user-info-dialog {
+    width: 100%;
+  }
+
+  .user-info-dialog img {
+    max-width: 150px;
+  }
+}

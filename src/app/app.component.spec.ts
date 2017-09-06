@@ -13,7 +13,10 @@ import {
   MdToolbarModule,
   MdIconModule,
   MdSnackBarModule,
-  MdCardModule
+  MdCardModule,
+  MdDialogModule,
+  MdProgressSpinnerModule,
+  MdListModule
 } from '@angular/material';
 
 describe('AppComponent', () => {
@@ -32,7 +35,10 @@ describe('AppComponent', () => {
         MdToolbarModule,
         MdIconModule,
         MdSnackBarModule,
-        MdCardModule
+        MdCardModule,
+        MdDialogModule,
+        MdProgressSpinnerModule,
+        MdListModule
       ],
       providers: [SearchUsersService]
     }).compileComponents();

@@ -577,7 +577,7 @@ hr {
 }
 
 .col-xs-offset-0 {
-  margin-left: 0%;
+  margin-left: 0;
 }
 
 @media (min-width: 768px) {
@@ -787,7 +787,7 @@ hr {
   }
 
   .col-sm-offset-0 {
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 
@@ -998,7 +998,7 @@ hr {
   }
 
   .col-md-offset-0 {
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 
@@ -1209,7 +1209,7 @@ hr {
   }
 
   .col-lg-offset-0 {
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 

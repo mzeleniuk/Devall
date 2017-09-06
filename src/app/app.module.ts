@@ -8,13 +8,17 @@ import {
   MdToolbarModule,
   MdIconModule,
   MdSnackBarModule,
-  MdCardModule
+  MdCardModule,
+  MdDialogModule,
+  MdProgressSpinnerModule,
+  MdListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
 import { SearchUsersService } from './search-users.service';
 import { FooterComponent } from './footer/footer.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 import 'hammerjs';
 
@@ -22,7 +26,11 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     SearchUsersComponent,
-    FooterComponent
+    FooterComponent,
+    UserInfoComponent
+  ],
+  entryComponents: [
+    UserInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,10 @@ import 'hammerjs';
     MdToolbarModule,
     MdIconModule,
     MdSnackBarModule,
-    MdCardModule
+    MdCardModule,
+    MdDialogModule,
+    MdProgressSpinnerModule,
+    MdListModule
   ],
   providers: [SearchUsersService],
   bootstrap: [AppComponent]

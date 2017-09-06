@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchUsersService } from '../search-users.service';
-import { MdSnackBar } from '@angular/material';
+import { UserInfoComponent } from '../user-info/user-info.component';
+import { MdSnackBar, MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-search-users',
@@ -13,18 +14,31 @@ export class SearchUsersComponent implements OnInit {
   language: string;
 
   results: any[] = [];
-  selected: false;
   error_text: string;
 
   constructor(public snackBar: MdSnackBar,
+              public dialog: MdDialog,
               private searchUsersService: SearchUsersService) {
   }
 
   ngOnInit() {
   }
 
+  openDialog(login) {
+    this.searchUsersService.getDetailsByUserName(login).subscribe(
+      response => {
+        this.dialog.open(UserInfoComponent, {
+          data: {user: response},
+          height: '80vh'
+        });
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
   search(location: string, language: string) {
-    this.selected = false;
     this.error_text = '';
 
     if (location || language) {

@@ -5,8 +5,8 @@ import { SearchUsersService } from '../search-users.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
-import { MdInputModule, MdButtonModule, MdSnackBarModule } from '@angular/material';
-import { MdSnackBar } from '@angular/material';
+import { MdInputModule, MdButtonModule, MdSnackBarModule, MdDialogModule } from '@angular/material';
+import { MdSnackBar, MdDialog } from '@angular/material';
 
 describe('SearchUsersComponent', () => {
   let component: SearchUsersComponent;
@@ -20,9 +20,10 @@ describe('SearchUsersComponent', () => {
         HttpModule,
         MdInputModule,
         MdButtonModule,
-        MdSnackBarModule
+        MdSnackBarModule,
+        MdDialogModule
       ],
-      providers: [SearchUsersService, MdSnackBar]
+      providers: [SearchUsersService, MdSnackBar, MdDialog]
     })
     .compileComponents();
   }));

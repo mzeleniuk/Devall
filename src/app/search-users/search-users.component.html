@@ -50,9 +50,20 @@
         <img md-card-image src="{{user.avatar_url}}">
 
         <md-card-actions class="user-card-actions">
-          <a md-mini-fab color="accent" href="{{user.html_url}}" target="_blank" title="View on GitHub">
-            <md-icon>open_in_new</md-icon>
-          </a>
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <a md-mini-fab color="accent" href="{{user.html_url}}" target="_blank" title="View on GitHub">
+                <md-icon>open_in_new</md-icon>
+              </a>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <button md-raised-button color="primary" class="view-profile-button" (click)="openDialog(user.login)">
+                <md-icon>picture_in_picture</md-icon>
+                View profile
+              </button>
+            </div>
+          </div>
         </md-card-actions>
       </md-card>
     </div>
