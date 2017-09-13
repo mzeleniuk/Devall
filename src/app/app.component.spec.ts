@@ -16,7 +16,8 @@ import {
   MdCardModule,
   MdDialogModule,
   MdProgressSpinnerModule,
-  MdListModule
+  MdListModule,
+  MdPaginatorModule
 } from '@angular/material';
 
 describe('AppComponent', () => {
@@ -38,7 +39,8 @@ describe('AppComponent', () => {
         MdCardModule,
         MdDialogModule,
         MdProgressSpinnerModule,
-        MdListModule
+        MdListModule,
+        MdPaginatorModule
       ],
       providers: [SearchUsersService]
     }).compileComponents();

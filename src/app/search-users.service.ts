@@ -11,7 +11,7 @@ export class SearchUsersService {
 
   constructor(private http: Http) { }
 
-  getUsersByLocationAndLanguage(location: string, language: string) {
+  getUsersByLocationAndLanguage(location: string, language: string, page: number, per_page: number) {
     let url;
 
     if (location && !language) {
@@ -22,7 +22,7 @@ export class SearchUsersService {
       url = `${this.searchUsersEndPoint}location:${location}+language:${language}`;
     }
 
-    return this.http.get(url)
+    return this.http.get(`${url}&page=${page}&per_page=${per_page}`)
       .map(this.extractData)
       .catch(this.handleError);
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchUsersService } from '../search-users.service';
 import { UserInfoComponent } from '../user-info/user-info.component';
-import { MdSnackBar, MdDialog } from '@angular/material';
+import { MdSnackBar, MdDialog, PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-search-users',
@@ -12,9 +12,17 @@ import { MdSnackBar, MdDialog } from '@angular/material';
 export class SearchUsersComponent implements OnInit {
   location: string;
   language: string;
+  page: number;
+  per_page: number;
 
   results: any[] = [];
   error_text: string;
+
+  length = 0;
+  pageSize = 30;
+  pageSizeOptions: number[] = [10, 30, 50];
+
+  pageEvent: PageEvent;
 
   constructor(public snackBar: MdSnackBar,
               public dialog: MdDialog,
@@ -44,13 +52,19 @@ export class SearchUsersComponent implements OnInit {
     if (location || language) {
       this.location = location;
       this.language = language;
+      this.per_page = this.pageEvent ? this.pageEvent.pageSize : this.pageSize;
+      this.page = this.pageEvent ? (this.pageEvent.pageIndex + 1) : 1;
 
-      this.searchUsersService.getUsersByLocationAndLanguage(location, language).subscribe(
+      this.searchUsersService.getUsersByLocationAndLanguage(location, language, this.page, this.per_page).subscribe(
         response => {
           this.results = response.items;
-          this.snackBar.open(`${response.total_count} users found`, null, {
-            duration: 5000
-          });
+          this.length = response.total_count;
+
+          if (!this.pageEvent) {
+            this.snackBar.open(`${response.total_count} users found`, null, {
+              duration: 5000
+            });
+          }
         },
         () => {
           this.results = [];

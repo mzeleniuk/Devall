@@ -11,7 +11,8 @@ import {
   MdCardModule,
   MdDialogModule,
   MdProgressSpinnerModule,
-  MdListModule
+  MdListModule,
+  MdPaginatorModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import 'hammerjs';
     MdCardModule,
     MdDialogModule,
     MdProgressSpinnerModule,
-    MdListModule
+    MdListModule,
+    MdPaginatorModule
   ],
   providers: [SearchUsersService],
   bootstrap: [AppComponent]

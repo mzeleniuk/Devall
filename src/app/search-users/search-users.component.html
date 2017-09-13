@@ -36,6 +36,11 @@
         </div>
       </div>
     </div>
+
+    <md-paginator *ngIf="results.length > 9" [length]="length" [pageSize]="pageSize"
+                  [pageSizeOptions]="pageSizeOptions"
+                  (page)="pageEvent = $event; search(location.value, language.value)">
+    </md-paginator>
   </div>
 
   <div class="row">
