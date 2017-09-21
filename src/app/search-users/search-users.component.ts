@@ -14,6 +14,7 @@ export class SearchUsersComponent implements OnInit {
   language: string;
   page: number;
   per_page: number;
+  resetPage: boolean;
 
   results: any[] = [];
   error_text: string;
@@ -46,14 +47,16 @@ export class SearchUsersComponent implements OnInit {
     );
   }
 
-  search(location: string, language: string) {
+  search(location: string, language: string, resetPage: boolean) {
     this.error_text = '';
 
     if (location || language) {
       this.location = location;
       this.language = language;
+      this.resetPage = resetPage;
       this.per_page = this.pageEvent ? this.pageEvent.pageSize : this.pageSize;
       this.page = this.pageEvent ? (this.pageEvent.pageIndex + 1) : 1;
+      this.page = resetPage ? 1 : this.page;
 
       this.searchUsersService.getUsersByLocationAndLanguage(location, language, this.page, this.per_page).subscribe(
         response => {
