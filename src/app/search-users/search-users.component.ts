@@ -15,6 +15,7 @@ export class SearchUsersComponent implements OnInit {
   page: number;
   per_page: number;
   resetPage: boolean;
+  loading: boolean;
 
   results: any[] = [];
   error_text: string;
@@ -31,15 +32,20 @@ export class SearchUsersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.loading = false;
   }
 
   openDialog(login) {
+    this.loading = true;
+
     this.searchUsersService.getDetailsByUserName(login).subscribe(
       response => {
         this.dialog.open(UserInfoComponent, {
           data: {user: response},
           height: '80vh'
         });
+
+        this.loading = false;
       },
       error => {
         console.error(error);
