@@ -15,6 +15,7 @@ export class SearchUsersComponent implements OnInit {
   page: number;
   per_page: number;
   resetPage: boolean;
+  searching: boolean;
   loading: boolean;
 
   results: any[] = [];
@@ -32,6 +33,7 @@ export class SearchUsersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.searching = false;
     this.loading = false;
   }
 
@@ -49,11 +51,14 @@ export class SearchUsersComponent implements OnInit {
       },
       error => {
         console.error(error);
+
+        this.loading = false;
       }
     );
   }
 
   search(location: string, language: string, resetPage: boolean) {
+    this.searching = true;
     this.error_text = '';
 
     if (location || language) {
@@ -68,6 +73,7 @@ export class SearchUsersComponent implements OnInit {
         response => {
           this.results = response.items;
           this.length = response.total_count;
+          this.searching = false;
 
           if (!this.pageEvent) {
             this.snackBar.open(`${response.total_count} users found`, null, {
@@ -77,6 +83,8 @@ export class SearchUsersComponent implements OnInit {
         },
         () => {
           this.results = [];
+          this.searching = false;
+
           this.snackBar.open('Please specify your search qualifiers', null, {
             duration: 5000
           });
