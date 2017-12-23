@@ -8,16 +8,16 @@ import { FooterComponent } from './footer/footer.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdInputModule,
-  MdButtonModule,
-  MdToolbarModule,
-  MdIconModule,
-  MdSnackBarModule,
-  MdCardModule,
-  MdDialogModule,
-  MdProgressSpinnerModule,
-  MdListModule,
-  MdPaginatorModule
+  MatInputModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSnackBarModule,
+  MatCardModule,
+  MatDialogModule,
+  MatProgressSpinnerModule,
+  MatListModule,
+  MatPaginatorModule
 } from '@angular/material';
 
 describe('AppComponent', () => {
@@ -31,16 +31,16 @@ describe('AppComponent', () => {
       imports: [
         BrowserAnimationsModule,
         HttpClientModule,
-        MdInputModule,
-        MdButtonModule,
-        MdToolbarModule,
-        MdIconModule,
-        MdSnackBarModule,
-        MdCardModule,
-        MdDialogModule,
-        MdProgressSpinnerModule,
-        MdListModule,
-        MdPaginatorModule
+        MatInputModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatSnackBarModule,
+        MatCardModule,
+        MatDialogModule,
+        MatProgressSpinnerModule,
+        MatListModule,
+        MatPaginatorModule
       ],
       providers: [SearchUsersService]
     }).compileComponents();

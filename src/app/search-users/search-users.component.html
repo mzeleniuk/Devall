@@ -6,30 +6,30 @@
           Find developers in your city
         </span>
 
-        <md-icon>input</md-icon>
+        <mat-icon>input</mat-icon>
       </div>
 
       <div class="md-panel-body">
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <md-input-container class="full-width">
-              <input mdInput placeholder="Location" #location
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Location" #location
                      (keyup.enter)="search(location.value, language.value, true)">
-            </md-input-container>
+            </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-            <md-input-container class="full-width">
-              <input mdInput placeholder="Language" #language
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Language" #language
                      (keyup.enter)="search(location.value, language.value, true)">
-            </md-input-container>
+            </mat-form-field>
           </div>
 
           <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
-            <button md-raised-button color="primary" class="search-button"
+            <button mat-raised-button color="primary" class="search-button"
                     (click)="search(location.value, language.value, true)"
                     disabled="{{!location.value && !language.value || searching}}">
-              <md-icon>search</md-icon>
+              <mat-icon>search</mat-icon>
               Search
             </button>
           </div>
@@ -37,41 +37,41 @@
       </div>
     </div>
 
-    <md-paginator *ngIf="results.length > 9" [length]="length" [pageSize]="pageSize"
+    <mat-paginator *ngIf="results.length > 9" [length]="length" [pageSize]="pageSize"
                   [pageSizeOptions]="pageSizeOptions"
                   (page)="pageEvent = $event; search(location.value, language.value, false)">
-    </md-paginator>
+    </mat-paginator>
   </div>
 
   <div class="row">
     <div *ngFor="let user of results" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-      <md-card class="user-card">
-        <md-card-header>
-          <md-card-title>
+      <mat-card class="user-card">
+        <mat-card-header>
+          <mat-card-title>
             <span class="mat-headline">{{user.login}}</span>
-          </md-card-title>
-        </md-card-header>
+          </mat-card-title>
+        </mat-card-header>
 
-        <img md-card-image src="{{user.avatar_url}}">
+        <img mat-card-image src="{{user.avatar_url}}">
 
-        <md-card-actions class="user-card-actions">
+        <mat-card-actions class="user-card-actions">
           <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <a md-mini-fab color="accent" href="{{user.html_url}}" target="_blank" title="View on GitHub">
-                <md-icon>open_in_new</md-icon>
+              <a mat-mini-fab color="accent" href="{{user.html_url}}" target="_blank" title="View on GitHub">
+                <mat-icon>open_in_new</mat-icon>
               </a>
             </div>
 
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-              <button md-raised-button color="primary" class="view-profile-button" (click)="openDialog(user.login)"
+              <button mat-raised-button color="primary" class="view-profile-button" (click)="openDialog(user.login)"
                       disabled={{loading}}>
-                <md-icon>picture_in_picture</md-icon>
+                <mat-icon>picture_in_picture</mat-icon>
                 View profile
               </button>
             </div>
           </div>
-        </md-card-actions>
-      </md-card>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
 </div>

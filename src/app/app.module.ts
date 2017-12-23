@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdInputModule,
-  MdButtonModule,
-  MdToolbarModule,
-  MdIconModule,
-  MdSnackBarModule,
-  MdCardModule,
-  MdDialogModule,
-  MdProgressSpinnerModule,
-  MdListModule,
-  MdPaginatorModule
+  MatInputModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatSnackBarModule,
+  MatCardModule,
+  MatDialogModule,
+  MatProgressSpinnerModule,
+  MatListModule,
+  MatPaginatorModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -37,16 +37,16 @@ import 'hammerjs';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MdInputModule,
-    MdButtonModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdSnackBarModule,
-    MdCardModule,
-    MdDialogModule,
-    MdProgressSpinnerModule,
-    MdListModule,
-    MdPaginatorModule
+    MatInputModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatCardModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatPaginatorModule
   ],
   providers: [SearchUsersService],
   bootstrap: [AppComponent]

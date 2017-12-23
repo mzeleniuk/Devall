@@ -5,8 +5,17 @@ import { SearchUsersService } from '../search-users.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MdInputModule, MdButtonModule, MdSnackBarModule, MdDialogModule, MdPaginatorModule } from '@angular/material';
-import { MdSnackBar, MdDialog } from '@angular/material';
+import {
+  MatInputModule,
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatListModule,
+  MatSnackBarModule,
+  MatDialogModule,
+  MatPaginatorModule
+} from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 
 describe('SearchUsersComponent', () => {
   let component: SearchUsersComponent;
@@ -18,13 +27,16 @@ describe('SearchUsersComponent', () => {
       imports: [
         BrowserAnimationsModule,
         HttpClientModule,
-        MdInputModule,
-        MdButtonModule,
-        MdSnackBarModule,
-        MdDialogModule,
-        MdPaginatorModule
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatIconModule,
+        MatListModule,
+        MatSnackBarModule,
+        MatDialogModule,
+        MatPaginatorModule
       ],
-      providers: [SearchUsersService, MdSnackBar, MdDialog]
+      providers: [SearchUsersService, MatSnackBar, MatDialog]
     })
     .compileComponents();
   }));

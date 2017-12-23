@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchUsersService } from '../search-users.service';
 import { UserInfoComponent } from '../user-info/user-info.component';
-import { MdSnackBar, MdDialog, PageEvent } from '@angular/material';
+import { MatSnackBar, MatDialog, PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-search-users',
@@ -27,8 +27,8 @@ export class SearchUsersComponent implements OnInit {
 
   pageEvent: PageEvent;
 
-  constructor(public snackBar: MdSnackBar,
-              public dialog: MdDialog,
+  constructor(public snackBar: MatSnackBar,
+              public dialog: MatDialog,
               private searchUsersService: SearchUsersService) {
   }
 
