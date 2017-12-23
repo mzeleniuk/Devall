@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MdDialogModule, MdProgressSpinnerModule } from '@angular/material';
 import { MD_DIALOG_DATA } from '@angular/material';
 
@@ -13,7 +13,7 @@ describe('UserInfoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserInfoComponent ],
-      imports: [ HttpModule, MdDialogModule, MdProgressSpinnerModule ],
+      imports: [ HttpClientModule, MdDialogModule, MdProgressSpinnerModule ],
       providers: [
         {provide: MD_DIALOG_DATA, useValue: {}}
       ]

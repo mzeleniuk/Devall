@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -9,7 +9,7 @@ export class SearchUsersService {
   private searchUsersEndPoint = 'https://api.github.com/search/users?q=';
   private getUserDetailsEndPoint = 'https://api.github.com/users/';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   getUsersByLocationAndLanguage(location: string, language: string, page: number, per_page: number) {
     let url;
@@ -32,23 +32,21 @@ export class SearchUsersService {
       const url = `${this.getUserDetailsEndPoint}${username}`;
 
       return this.http.get(url)
-        .map((response: Response) => response.json())
+        .map((response: Response) => response)
         .catch(this.handleError);
     }
   }
 
   private extractData(response: Response) {
-    const body = response.json();
-
-    return body || {};
+    return response || {};
   }
 
   private handleError(error: Response | any) {
     let errMsg: string;
 
     if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
+      const body = error || '';
+      const err = body['error'] || JSON.stringify(body);
 
       errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
     } else {

@@ -1,5 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SearchUsersComponent } from './search-users/search-users.component';
@@ -30,7 +30,7 @@ describe('AppComponent', () => {
       ],
       imports: [
         BrowserAnimationsModule,
-        HttpModule,
+        HttpClientModule,
         MdInputModule,
         MdButtonModule,
         MdToolbarModule,
